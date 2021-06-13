@@ -34,5 +34,13 @@ accurate binary mask.
 Augmentation, Deep Learning, Environmental Monitoring, Microplastic Quantification, Image Segmentation
 
 
+## Reference
+
+* src.functional.loss.py is obtained from https://www.kaggle.com/bigironsphere/loss-function-library-keras-pytorch.
+
+* U-Net architectures and the evaluation metrics are obtained from https://github.com/qubvel/segmentation_models.pytorch. (A modification was done for Accuracy object in metrics.py to allow computing balanced accuracy.)
+
+* Nested U-Net architecture is obtained from https://github.com/4uiiurz1/pytorch-nested-unet.
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
