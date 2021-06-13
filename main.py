@@ -1,7 +1,3 @@
-# loss.py from https://www.kaggle.com/bigironsphere/loss-function-library-keras-pytorch
-# unet arch. and evaluation metrics from https://github.com/qubvel/segmentation_models.pytorch
-# Accuracy in segmentation_models.segmentation_models_pytorch.utils.metrics.py was modified to calculate balanced accuracy
-import code
 import os
 import csv
 from datetime import datetime
@@ -24,7 +20,7 @@ from src.functional.fit_torchvision_model import train_model as train_torchvisio
 from src.functional.evaluation_unet import testset_evaluation as testset_evaluation_unet
 from src.functional.evaluation_torchvision_model import testset_evaluation as testset_evaluation_torchvision
 
-def main(model, train=True, weights=None, test=True, optimizer='adam', momentum=0.9, lr=0.001, epoch=20, batch_size=10, criterion='dice', TTA=False):
+def main(model, train=True, weights=None, test=True, epoch=20, batch_size=10, criterion='dice', optimizer='adam', momentum=0.9, lr=0.001, TTA=False):
 	"""
 	model_name : choose model from either 'unet', 'fcn', 'deeplabv3', 'nested_unet'
 			these models will be pre-trained models
@@ -233,15 +229,20 @@ def main(model, train=True, weights=None, test=True, optimizer='adam', momentum=
 																	confusion[0], confusion[1], confusion[2], confusion[3]))
 
 
-	# with open(os.path.join(os.getcwd(), 'train_log', ))
-
-
 if __name__ == '__main__':
+	################################### INPUTS ###################################
+	model = 'unet'
+	train=True
+	weights=None
+	test=True
+	epoch=20
+	batch_size=10
+	criterion='dice'
+	optimizer='adam'
+	momentum=0.9
+	lr=0.001
+	TTA=False
+	##############################################################################
+	main(model=model, train=train, weights=weights, test=test, epoch=epoch, batch_size=batch_size, criterion=criterion, optimizer=optimizer, momentum=momentum, lr=lr, TTA=TTA)
 
-	# main(model='unet', train=True, weights=None, test=True, optimizer='sgd', momentum=0.9, lr=0.001, epoch=15, batch_size=10, criterion='dice', TTA=False)
-	main(model='unet', train=False, weights="/home/sangp/bachelor_thesis/git_repo/microplastics/result/saved_model/unet/20210613_192714_model[unet]_loss[dice]_optim[sgd]_epoch[15]_TTA[False].pth", 
-		test=True, optimizer='adam', momentum=0.9, lr=0.001, epoch=20, batch_size=10, criterion='dice', TTA=False)
-	# main(model='fcn', epoch=5)
-	# main(model='deeplabv3', epoch=5)
-	# main(model='nested_unet', epoch=5)
 	# code.interact(local=dict(globals(), **locals()))
