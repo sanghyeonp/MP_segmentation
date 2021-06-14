@@ -4,7 +4,7 @@
 ## Sanghyeon Park
 
 
-*This is bachelor dissertation conducted at Ghent University Global Campus (GUGC).*
+*This is bachelor dissertation conducted at Ghent University Global Campus (GUGC), Incheon, Republic of Korea in 2021.*
 
 
 Counsellors: Ho-min Park, Maria Krishna de Guzman\
